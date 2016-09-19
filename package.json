@@ -1,15 +1,15 @@
 {
-  "name": "react-es2015",
+  "name": "react_es2015_demo",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
     "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
     "watch": "webpack -d --watch"
   },
-  "author": "",
+  "author": "mingz",
   "license": "ISC",
   "dependencies": {
     "react": "^15.3.1",
