@@ -1,28 +1,31 @@
-`mkdir react-es2015 && cd react-es2015`
+`mkdir react_es2015_demo && cd react_es2015_demo`
 `npm init`
-`mkdir app build`
-`touch app/hello.jsx app/main.jsx build/index.html webpack.config.js`
+`mkdir -p app/components`
+`touch app/components/hello.jsx app/app.jsx index.html webpack.config.js`
 
 // hello.jsx
 
-    import React from 'react';
-    export default class Hello extends React.Component {
+    import React, { Component } from 'react';
+    
+    export default class Hello extends Component {
         render() {
-            return <h1>Hello world</h1>;
+            return <h1>Hello { this.props.name }</h1>;
         }
     }
 
-// main.jsx
+// app.jsx
 
     import React from 'react';
-    import ReactDOM from 'react-dom';
-    import Hello from './hello.jsx';
+    import { render } from 'react-dom';
+    import Hello from './components/hello.jsx';
+    
     function main() {
-        ReactDOM.render(
-            <Hello />,
+        render(
+            <Hello name="mingz"/>,
             document.getElementById('app')
         );
     }
+    
     main();
 
 // index.html
@@ -34,35 +37,43 @@
     </head>
     <body>
     <div id="app"></div>
-    <script src="bundle.js"></script>
+    <script src="dist/bundle.js"></script>
     </body>
     </html>
 
 // package.json
 
-    "scripts": {
+    "main": "webpack.config.js",
+      "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
-        "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server ./build -p 8080 -o"
+        "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
+        "watch": "webpack -d --watch"
       },
+      
 // webpack.config.js
 
     var path = require('path');
     var webpack = require('webpack');
     var ROOT_PATH = path.resolve(__dirname);
+    
     module.exports = {
-        entry: [path.resolve(ROOT_PATH, 'app/main.jsx')],
+    
+        entry: [path.resolve(ROOT_PATH, 'app/app.jsx')],
+    
+        output: {
+            path: path.resolve(ROOT_PATH, 'dist'),
+            filename: 'bundle.js'
+        },
+    
         resolve: {
             extensions: ['', '.js', '.jsx']
         },
-        output: {
-            path: path.resolve(ROOT_PATH, 'build'),
-            filename: 'bundle.js'
-        },
+    
         module: {
             loaders: [
                 {
-                    test: /\.jsx?$/,
+                    test: /\.js|jsx$/,
                     exclude: /node_modules/,
                     loader: "babel",
                     query: {
@@ -77,6 +88,7 @@
 `npm i babel-core babel-loader babel-preset-es2015 babel-preset-react http-server webpack --save-dev`
 `npm run build`
 `npm run start`
+`npm run watch`
 
 
 
