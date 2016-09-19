@@ -1,6 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 node_modules
-build/bundle.js
+dist
 .idea/.name
 .idea/encodings.xml
 .idea/jsLibraryMappings.xml

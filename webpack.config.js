@@ -4,21 +4,21 @@ var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
 
-    entry: [path.resolve(ROOT_PATH, 'app/main.jsx')],
+    entry: [path.resolve(ROOT_PATH, 'app/app.jsx')],
+
+    output: {
+        path: path.resolve(ROOT_PATH, 'dist'),
+        filename: 'bundle.js'
+    },
 
     resolve: {
         extensions: ['', '.js', '.jsx']
     },
 
-    output: {
-        path: path.resolve(ROOT_PATH, 'build'),
-        filename: 'bundle.js'
-    },
-
     module: {
         loaders: [
             {
-                test: /\.jsx?$/,
+                test: /\.js|jsx$/,
                 exclude: /node_modules/,
                 loader: "babel",
                 query: {

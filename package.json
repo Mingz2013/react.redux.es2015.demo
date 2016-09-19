@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
-    "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server ./build -p 8080 -o"
+    "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
+    "watch": "webpack -d --watch"
   },
   "author": "",
   "license": "ISC",
