@@ -1,5 +1,5 @@
 {
-  "name": "react_es2015_demo",
+  "name": "react.redux.es2015.demo",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm i && webpack --progress --profile --colors --display-error-details --display-cached",
     "start": "npm i && webpack && node ./node_modules/http-server/bin/http-server . -p 8080 -o",
-    "watch": "webpack -d --watch"
+    "watch": "npm i && webpack -d --watch"
   },
   "author": "mingz",
   "license": "ISC",
