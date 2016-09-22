@@ -1,6 +1,6 @@
 import { ADD_CHAT } from '../constants/ActionTypes'
 
-export default addChat = (text) => ({
+export const addChat = (text) => ({
     type: ADD_CHAT,
     text
 });
