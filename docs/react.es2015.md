@@ -1,4 +1,4 @@
-`mkdir react_es2015_demo && cd react_es2015_demo`
+`mkdir react.es2015.demo && cd react.es2015.demo`
 `npm init`
 `mkdir -p app/components`
 `touch app/components/hello.jsx app/app.jsx index.html webpack.config.js`

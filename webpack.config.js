@@ -4,7 +4,7 @@ var ROOT_PATH = path.resolve(__dirname);
 
 module.exports = {
 
-    entry: [path.resolve(ROOT_PATH, 'app/app.jsx')],
+    entry: [path.resolve(ROOT_PATH, 'app/index.js')],
 
     output: {
         path: path.resolve(ROOT_PATH, 'dist'),
