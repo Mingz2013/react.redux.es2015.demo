@@ -3,8 +3,8 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import App from './containers/App'
 import chatApp from './reducers'
-
 import { createStore } from 'redux'
+
 let store = createStore(chatApp);
 
 let rootElement = document.getElementById('app');
